@@ -24,6 +24,7 @@ Embed the KiwiCAPTCHA script into your website:
 
 ```html
 <script src="https://kiwicaptcha.web.app/captcha.min.js"></script>
+```
 
 ### 2. Add the CAPTCHA Box
 
