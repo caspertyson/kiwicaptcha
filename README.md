@@ -32,6 +32,7 @@ Place the CAPTCHA box in the desired location on your site:
 
 ```html
 <div class="captcha-box"></div>
+```
 
 ### 3. Configure Origin Check
 
@@ -46,6 +47,7 @@ window.addEventListener('message', function(event) {
         // Implement your logic here, for example, enabling a submit button
     }
 }, false);
+```
 
 
 ## Benefits
@@ -73,8 +75,7 @@ providing an additional layer of security.
 - **Unique Session IDs**: Each CAPTCHA challenge is associated with a unique session ID, ensuring that 
 responses can be accurately verified against the original question.
 - **Timed Responses**: The system monitors the time taken to respond to the CAPTCHA, adding another 
-layer of bot detection. Responses that are too quick or come after a long delay can be flagged for 
-review.
+layer of bot detection. Responses that come after a long delay will be rejected.
 
 ## Integration Process
 
@@ -82,8 +83,4 @@ KiwiCAPTCHA is designed to be easily integrated into any website with minimal ef
 documentation for detailed instructions on embedding the CAPTCHA, configuring the origin check, and 
 customizing the CAPTCHA challenge to fit the theme and security requirements of your site.
 
-## Conclusion
-
-KiwiCAPTCHA offers a novel and effective solution for website security and user engagement. By 
-focusing on unique, localized challenges, it
 
