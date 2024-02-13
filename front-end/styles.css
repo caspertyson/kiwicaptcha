@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+  }
+  h1{
+    width: 700px;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 60px;
+  }
+  .headerP{
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: large;
+  }
+  .container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    display: flex;
+    justify-items: center;
+  }
+  .demo{
+    margin-right: 20px;
+  }
+  .use{
+    /* width: 50%; */
+    overflow: scroll;
+  }
+  .header {
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  .demo, .use {
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  .use pre {
+    background: #eee;
+    padding: 10px;
+    overflow: auto;
+  }
+  .use code {
+    display: block; /* For block level code display */
+    white-space: pre; /* Keeps formatting of whitespace */
+    line-height: 1.5;
+    color: #333;
+  }
+  .why{
+    width: 80%;
+    margin: auto;
+    background-color: white;
+  }
+  .why h2{
+    padding: 20px;
+    padding-bottom: 0;
+  }
+  .why h3{
+    padding: 20px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  .why p{
+    padding: 20px;
+    padding-top: 0;
+  }

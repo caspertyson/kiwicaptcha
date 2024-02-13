@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KiwiCaptcha</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://kiwicaptcha.web.app/captcha.min.js"></script>
+<script>
+  window.addEventListener('message', function(event) {
+      // Check the origin to your site
+      // https://kiwicaptcha.web.app/
+      if (event.origin !== "https://kiwicaptcha.web.app") { 
+          return; 
+      }
+
+      if (event.data.type === 'CAPTCHA_VERIFIED' && event.data.verified) {
+          console.log("CAPTCHA is verified!");
+          // e.g., enable a form button, change the UI, etc.
+      }
+  }, false);
+</script>
+</head>
+<body>
+
+<div class="header">
+  <h1>Solve your spam problems today</h1>
+  <p class="headerP">KiwiCAPTCHA, a New Zealand inspired CAPTCHA</p>
+</div>
+
+<div class="container">
+  <div class="demo">
+    <h2>Demo</h2>
+    <div id="captcha-box">
+    </div>
+  </div>
+
+  <div class="use">
+    <h2>Use</h2>
+    <p>Put this in your page somewhere:</p>
+    <pre><code>&lt;script src="https://kiwicaptcha.web.app/captcha.min.js"&gt;&lt;/script&gt;</code></pre>
+    <p>Put this in your site where you want the CAPTCHA:</p>
+    <pre><code>&lt;div class="captcha-box"&gt;&lt;/div&gt;</code></pre>
+    <p>Add this javascript, and change to your origin:</p>
+    <pre><code>&lt;script>
+      window.addEventListener('message', function(event) {
+          // Change "http://127.0.0.1:5500" to your site (no trailing slash)
+          if (event.origin !== "http://127.0.0.1:5500") { 
+              return; 
+          }
+          if (event.data.type === 'CAPTCHA_VERIFIED' && event.data.verified) {
+              // e.g., enable/submit a form button etc. what happens after captcha is verified
+          }
+      }, false);
+  &lt;/script&gt;</code></pre>
+  </div>
+  
+</div>
+<div class="why">
+  <div class="benefits-container">
+    <h2>Benefits:</h2>
+    <h3>Custom CAPTCHA fools a lot of bots</h3>
+    <p>Googles reCaptcha owns 90+ percent of the market share in terms of CAPTCHA's.  <br></br> 
+      Therefore, people looking to fool captcha forms and sign ins will benefit much more from creating 
+      automated bots to look for flaws in reCapture, or other more popular CAPTCHA's. This gives smaller
+      CAPTCHA's like KiwiCAPTCHA better odds.
+    </p>
+    <h3>Kiwi-esque CAPTCHA increases customer engagement</h3>
+    <p>How you do one thing is how you do everything! <br></br>
+      If your customers see that you are paying attention to detail on such a level that you have tailored
+      your websites CAPTCHA to your audience, they know that you will do that on whatever you're selling too!
+    </p>
+    <h3>Honey Potting</h3>
+    <p>Trick the trickster. <br></br>
+      The captcha.min.js file creates a honeypot input html element called "name". As this is hidden
+      via CSS to the user, and not on the HTML, the bot will hopefully see this and add a name. If the API detects that 
+      the name input has been filled out, it must have been a bot, so it does not verify it as a human!
+    </p>
+    <h3>Timing and Unique Session ID</h3>
+    <p>The following shows the actions done by KiwiCAPTCHA. 
+      <br></br><b>captcha.min.js > API:</b> captcha.min.js sends a request to the API
+      <br></br><b>API > captcha.min.js: </b>API creates unique session ID, picks a question, stores the ID with the answer, and sends captcha.min.js the question
+      <br></br><b>captcha.min.js > User:</b> captcha.min.js receieves the question and displays it to the user.
+      <br></br><b>User > captcha.min.js > API:</b> the users answer, along with the unique session ID is sent back to the API
+      <br></br><b>API > captcha.min.js:</b> the API compares the users answer, along with the stored answer under the session, and returns a true or false. As well, if the session ID is older than 1 minute, the API will return false.
+      <br></br><b>captcha.min.js:</b> either the user is verified as human, or it will start the process from scratch!
+    </p>
+  </div>
+</div>
+
+<div class="header">
+  <p>KiwiCAPTCHA.web.app</p>
+</div>
+
+</body>
+</html>
